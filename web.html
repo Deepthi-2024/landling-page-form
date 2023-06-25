@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamic Content Example</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    
+    .container {
+      display: flex;
+    }
+    
+    .left-panel {
+      width: 20%;
+      height: 100vh;
+      background-color: #f1f1f1;
+      padding: 20px;
+    }
+    
+    .content {
+      width: 80%;
+      height: 100vh;
+      background-color: #fff;
+      padding: 20px;
+    }
+    
+    .hidden {
+      display: none;
+    }
+    
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    li {
+      margin-bottom: 10px;
+    }
+    
+    a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    
+    a:hover {
+      color: #000;
+    }
+    .home {
+        justify-content: center;
+        align-items: center;
+        display:flex;
+    }
+    button{
+        border-radius: 40sp;
+        font-size: larger;
+    }
+  </style>
+  <script>
+    function showContent(contentName) {
+      var contentElements = document.getElementsByClassName("content");
+      
+      for (var i = 0; i < contentElements.length; i++) {
+        contentElements[i].classList.add("hidden");
+      }
+      
+      var selectedContent = document.getElementById(contentName);
+      selectedContent.classList.remove("hidden");
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="left-panel">
+      <ul>
+        <li><a href="#" onclick="showContent('home')">Home</a></li>
+        <li><a href="#" onclick="showContent('contact')">Contact</a></li>
+        <li><a href="#" onclick="showContent('information')">Information</a></li>
+        <li><a href="#" onclick="showContent('guide')">Guide</a></li>
+      </ul>
+    </div>
+    
+    <div class="content" id="home">
+      <h1>Welcome to the Home Page</h1>
+      <p>This is the content for the Home page.</p>
+      <center><h1>Login Page</h1></center>
+      <div class = "home">
+        <form>
+            <label>Username : </label>
+            <input type="text" placeholder="Username" size="40sp" required><br>
+            <label>Password : </label>
+            <input type="password" placeholder="Password" size="40sp" required><br>
+            <button type="submit">Login</button>
+      </form>
+
+       
+      </div>
+    </div>
+    
+    <div class="content hidden" id="contact">
+      <center><h1>Contact Information</h1></center>
+      <p>This is the content for the Contact page.</p>
+      <p>A Contact Us page is essential to building a brand's website as it allows visitors to contact you easily without leaving their browser. They also give you the opportunity to capture leads and improve customer service. Generally, visitors can also leave feedback or ask questions through these channels.
+      </p>
+    </div>
+    
+    <div class="content hidden" id="information">
+      <center><h1>Information Page</h1></center>
+      <p>This is the content for the Information page.</p>
+      <p>A website is a collection of web pages and related content that is identified by a common domain name and published on at least one web server. Websites are typically dedicated to a particular topic or purpose, such as news, education, commerce, entertainment or social networking</p>
+    </div>
+    
+    <div class="content hidden" id="guide">
+      <center><h1>Guide Page</h1></center>
+      <p>This is the content for the Guide page.</p>
+      <p> A website style guide is an in-depth design and branding document. It typically covers the code of standards and rules for representing a brand on a website's user interface (UI), and should be used as a reference by anyone who works on the website.14</p>
+    </div>
+  </div>
+</body>
+</html>
